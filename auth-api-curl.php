@@ -17,11 +17,11 @@ function simpleHeaderHandler($ch, $header){
     return $len;
 }
 
-$apiKey        = "FSp1t912z5aGmPVFa2RF90HkuybBLlk8djIv";
-$secretKey     = "pWePybYykRi85hNKiQkHd8WPYCAPY21n0QdSfq_2J-ac";
+$apiKey        = $_POST['apiKey'];//"FSp1t912z5aGmPVFa2RF90HkuybBLlk8djIv";
+$secretKey     = $_POST['secretKey'];//"pWePybYykRi85hNKiQkHd8WPYCAPY21n0QdSfq_2J-ac";
 $siteID        = "1126";
 
-$echo           = array("itineraryNumber"=>'111', "emailAddress"=>'sourabh@gmail.com', "showRelated"=>"true");
+$echo           = array("siteID"=>$siteID);
 
 $encodedApiKey = base64urlEncode($apiKey);
 $signatureKey  = $encodedApiKey . "|" . $siteID;
@@ -38,7 +38,7 @@ curl_setopt_array($curl, array(
 	CURLOPT_URL => $url,
 	CURLOPT_HTTPHEADER => array(
 		'Content-Type: application/json',
-		'x-lucid-api-siteid:' .$siteID,
+		'lucid-siteid:' .$siteID,
 		'Authorization:' .$authToken
 	),
 	CURLOPT_POST => 1,
@@ -50,7 +50,7 @@ curl_setopt_array($curl, array(
 
 //echo curl_exec($curl);
 $result = curl_exec($curl);
-//$result = json_decode(curl_exec($curl), true);
+$result = json_decode(curl_exec($curl), true);
 echo '<pre>'; print_r($result); 
 ?>
     
