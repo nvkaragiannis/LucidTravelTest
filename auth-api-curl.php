@@ -54,6 +54,8 @@ curl_setopt_array($curl, array(
 	CURLOPT_HTTPHEADER => array(
 		'Content-Type: application/json',
 		'lucid-siteid:' .$siteID,
+		'api-key:' .$apiKey,
+		'secret-key:' .$secretKey,
 		'Authorization:' .$authToken
 	),
 	CURLOPT_POST => 1,
