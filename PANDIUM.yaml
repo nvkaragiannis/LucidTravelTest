@@ -2,20 +2,3 @@ version: 0.5
 base: php:7.3
 build: composer install
 run: php -f auth-api-curl.php
-
-connectors:
-# - hubspot
-# - aws # S3
-
-configs:
-  - name: PAN_SEC_LEAGUEAPPS_ACCESS_TOKEN
-  - type: string
-  - required: true
-
-  - name: PAN_SEC_LEAGUEAPPS_SITE_ID
-  - type: string
-  - required: true
-  
-  - name: PAN_SEC_LEAGUEAPPS_CLIENT_ID
-  - type: string
-  - required: true
