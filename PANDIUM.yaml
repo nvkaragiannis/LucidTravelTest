@@ -1,4 +1,3 @@
 version: 0.4
 base: php:7.4
-build: composer install
-run: php -f auth-api-curl.php
+run: php -f auth-api-curl.ph
