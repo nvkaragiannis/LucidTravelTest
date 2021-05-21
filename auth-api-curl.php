@@ -19,7 +19,7 @@ if (curl_errno($curl)) {
     echo 'Error:' . curl_error($curl);
 }
 curl_close($curl);
-return $data;
+//return $data;
 
 echo '<pre>'; print_r($_ENV);
 ?>
