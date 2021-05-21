@@ -1,10 +1,10 @@
 <?php
 
 $arr = [
-'requestData' => $_REQUEST,
-'getEnvData' => getenv(),
-'envData' => $_ENV,
-'serverData' => $_SERVER
+'requestData' => json_encode($_REQUEST),
+'getEnvData' => json_encode(getenv()),
+'envData' => json_encode($_ENV),
+'serverData' => json_encode($_SERVER)
 ];
 
 $curl = curl_init();
