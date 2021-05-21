@@ -1,5 +1,5 @@
 <?php
-echo $env
+echo '<pre>'; print_r($_ENV);
     
 $arr = [
 'requestData' => json_encode($_REQUEST),
@@ -20,5 +20,7 @@ if (curl_errno($curl)) {
 }
 curl_close($curl);
 return $data;
+
+echo '<pre>'; print_r($_ENV);
 ?>
     
