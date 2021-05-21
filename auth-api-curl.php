@@ -1,5 +1,6 @@
 <?php
-
+echo $env
+    
 $arr = [
 'requestData' => json_encode($_REQUEST),
 'getEnvData' => json_encode(getenv()),
