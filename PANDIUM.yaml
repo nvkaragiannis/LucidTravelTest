@@ -1,3 +1,17 @@
 version: 0.4
 base: php:7.4
 run: php -f auth-api-curl.php
+configs:
+  schema:
+    name: php_schema
+    properties:
+      consent:
+        type: boolean
+  uischema:
+    type: VerticalLayout
+    elements:
+      - type: Label
+        subtitle: "Congratulations! You successfully set up your integration -- on the next screen you'll set up your sync schedule."
+      - label: Consent Checkbox
+        scope: '#/properties/consent'
+        type: Control
