@@ -1,5 +1,6 @@
 version: 0.4
-base: php:7.4
+base: php:8.0
+build: composer install
 run: php -f auth-api-curl.php
 configs:
   schema:
