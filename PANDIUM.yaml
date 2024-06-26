@@ -1,5 +1,5 @@
 version: 0.4
-base: php:8.1
+base: php:8.0
 build: composer update
 run: php -f auth-api-curl.php
 configs:
