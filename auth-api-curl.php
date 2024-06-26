@@ -1,5 +1,5 @@
 <?php
-//echo '<pre>'; print_r($_ENV);
+echo '<pre>'; print_r($_ENV);
     
 /*$arr = [
 'requestData' => json_encode($_REQUEST),
