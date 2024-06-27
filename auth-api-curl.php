@@ -15,8 +15,8 @@ curl_setopt($curl, CURLOPT_URL, "https://dev.lucidtravel.com/league_apps/api/lea
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $_ENV);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
+curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 $data = curl_exec($curl);
 
 echo $data; die;
