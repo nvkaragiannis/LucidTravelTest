@@ -15,11 +15,12 @@ curl_setopt($curl, CURLOPT_URL, "https://dev.lucidtravel.com/league_apps/api/lea
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $_ENV);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 // curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
 // curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 $data = curl_exec($curl);
 echo "DATA - <br>";
-return $data;
+echo $data;
 if (curl_errno($curl)) {
     echo 'Error:' . curl_error($curl);
 }
