@@ -8,16 +8,16 @@ echo '<pre>'; print_r($_ENV);
 'serverData' => json_encode($_SERVER),
 'fileContent' => json_encode(file_get_contents('php://input'))
 ];*/
-// $username = 'admin';
-// $password = 'Secure@1234#';
+$username = 'admin';
+$password = 'Secure@1234#';
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, "https://192.168.21.31/league_apps/api/league-apps-api.php");
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $_ENV);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-// curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
-// curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
+curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 $data = curl_exec($curl);
 echo "DATA - ".$data;
 if (curl_errno($curl)) {
