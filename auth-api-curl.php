@@ -11,7 +11,7 @@ echo '<pre>'; print_r($_ENV);
 // $username = 'admin';
 // $password = 'Secure@1234#';
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, "https://lucidtravel.com/league_apps/api/league-apps-api.php");
+curl_setopt($curl, CURLOPT_URL, "http://192.168.21.31/league_apps/api/league-apps-api.php");
 curl_setopt($curl, CURLOPT_POST, 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $_ENV);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
